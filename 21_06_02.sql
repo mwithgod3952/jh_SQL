@@ -76,5 +76,9 @@ VALUES('사피엔스', '유빌하하리라', 22000, '2015-11-23', '김영사', 2
 ('아몬드(양장)', '손은평', NULL, NULL, NULL, 2);
 
 SELECT * FROM Bookstore;
+
+-- +++
+Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '
+ : 상단 에러의 경우 열 수가 일치하지 않을 때 발생할 수 있다.
  
  
