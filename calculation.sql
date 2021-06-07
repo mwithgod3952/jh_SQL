@@ -24,7 +24,6 @@ WHERE  publish_date >= '2015-01-01' AND publish_date <= '2021-12-31' AND price <
 SELECT name, price, price*0.5 as discounted_price FROM mamber.bookstore
 WHERE price IS NOT NULL;
 
-
 -- === 
 SELECT * FROM bookstore
 WHERE publisher = '김영사' AND price >= 20000;
@@ -41,5 +40,34 @@ WHERE author LIKE '마이클__';
 SELECT COUNT(*) AS '정보미기입집계' FROM bookstore
 WHERE publisher IS NULL;
 
+SELECT * FROM bookstore
+WHERE author IS NOT NULL 
+AND price IS NOT NULL 
+AND author NOT LIKE '유빌%' 
+AND author NOT LIKE '한스%' 
+AND price <= 20000;
 
+SELECT * FROM bookstore
+WHERE author NOT IN ('유빌하하리라', '한스로슬링') 
+AND price <= 20000;
 
+-- 주의 WHERE 절에서 alias 쓸 수 없음 
+SELECT name, publisher, publish_date AS original_appointment, DATE_FORMAT(publish_date + 2, '%Y-%m-%d') AS delayed_publish_date 
+FROM bookstore
+WHERE publish_date IS NOT NULL;  
+
+-- 특수문자 및 공백에 대한 alias
+SELECT name AS '**book titles**', publish_date AS '출간일' FROM bookstore
+WHERE publish_date IS NOT NULL
+AND publish_date BETWEEN '2020-01-01' AND '2020-12-31'; 
+
+SELECT * FROM bookstore WHERE name LIKE '%(%';
+
+SELECT * FROM bookstore WHERE price IS NOT NULL ORDER BY price DESC;
+
+SELECT * FROM bookstore WHERE publisher = '김영사' ORDER BY publish_date DESC;
+
+SELECT DISTINCT author FROM bookstore; 
+
+SELECT DISTINCT author, publisher, price FROM bookstore
+WHERE publisher IS NOT NULL;
