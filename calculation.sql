@@ -1,3 +1,12 @@
+-- Preview_1) 제약조건
+-- : NOT NULL
+-- : PRIMARY KEY, FORIEGN KEY 
+-- : UNIQUE > 열에 중복값 입력을 규제
+-- : CHECK  > 추가될 데이터에 대한 범위 규제  
+
+-- Preview_2) 데이터타입
+-- 숫자 > INT, FLOAT, DOUBLE
+
 -- 비교연산자와 관련하여 순차적인 조회 접근
 -- 1) 전체조회  
 SELECT * FROM bookstore;
